@@ -101,6 +101,7 @@ form{
     display: flex;
     flex-direction: row;
     align-self: center;
+    margin-bottom: 110px;
 }
 
 .button-container input {
@@ -126,4 +127,17 @@ form{
     border: 0px solid transparent;
     text-shadow: 0px 0px 0px transparent;
     cursor: pointer;
+}
+
+.canvas-wrapper {
+    align-self: center;
+    width: 679;
+    height: 382;
+}
+
+.canvas-wrapper canvas {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-top: 110px;
 }
