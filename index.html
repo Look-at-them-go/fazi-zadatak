@@ -21,24 +21,29 @@
             <span>Create ID Card</span>
         </div>
 
-        <div class="create-form-container spacing">
-            <div class="image-selector">
-                <div class="circle">
-                    <img src="assets/uploadImage.png" alt="">
+
+        <form action="">
+            <div class="create-form-container spacing">
+                <div class="image-selector">
+                    <label for="uploadImage">
+                        <div class="circle">
+                            <img src="assets/uploadImage.png" alt="">
+                        </div>
+                    </label>
+                    <input type="file" name="" id="uploadImage" class="file-picker">
                 </div>
-            </div>
-            <div class="create-form">
-                <form action="">
+                <div class="input-fields">
                     <input type="text" placeholder="Name">
                     <input type="text" placeholder="Surname">
-                </form>
-
+                </div>
             </div>
-        </div>
 
-        <div class="button-container spacing">
-            <a>CREATE</a>
-        </div>
+            <div class="button-container spacing">
+                <input type="submit" value="CREATE">
+            </div>
+        </form>
+
+
 
     </div>
 </body>
