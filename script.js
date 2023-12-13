@@ -8,20 +8,24 @@ form.addEventListener('submit', (e) => {
     const formData = new FormData(form);
     const obj = Object.fromEntries(formData.entries());
     const img = convertBase64(obj.image);
+    if(!validateData(obj)){
+        alert("Invalid data");
+        return;
+    }
     if(Users.length < 10){
         var user = createUser(firstCharacterUpper(obj.Firstname),firstCharacterUpper(obj.Surname),img);
         Users.push(user);
         
         var userCanvas = document.createElement("canvas");
 
-        userCanvas.setAttribute("id",user.id);
-        userCanvas.setAttribute("width",679);
-        userCanvas.setAttribute("height",382)
+        userCanvas.setAttribute("id", user.id);
+        userCanvas.setAttribute("width", 679);
+        userCanvas.setAttribute("height", 382);
 
         var wrapper = document.getElementById("canv");
         wrapper.appendChild(userCanvas);
 
-        drawCard(user.id,user)
+        drawCard(user)
 
     } else {alert("You can have no more than 10 users")}
     console.log(Users);
@@ -58,6 +62,9 @@ function generateId(users){
     return id;
 }
 
+function validateData(user){
+    return user.Firstname.trim().length != 0 && user.Surname.trim().length != 0
+}
 
 function createUser(firstName,surname, image){
     id = generateId(Users);
@@ -94,8 +101,8 @@ async function convertBase64(image){
     return image;
 }
 
-async function drawCard(id,user){
-    var c = document.getElementById(id);
+async function drawCard(user){
+    var c = document.getElementById(user.id);
     var ctx = c.getContext("2d");
 
 
