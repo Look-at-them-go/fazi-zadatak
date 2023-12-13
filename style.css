@@ -1,11 +1,13 @@
 body {
-    background: radial-gradient(circle at 40% 20%, rgba(22,164,158,255) 20%, rgba(40,56,145,255) 60% );
+    margin: 0px;
     font-family: 'Open Sans';
+    background: rgba(40,56,145,255) ;
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
+    background: radial-gradient(circle at 30% 15%, rgba(22,164,158,255) 20%, rgba(40,56,145,255) 60% );
 }
 
 .spacing {
@@ -130,9 +132,9 @@ form{
 }
 
 .canvas-wrapper {
-    align-self: center;
-    width: 679;
-    height: 382;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .canvas-wrapper canvas {
